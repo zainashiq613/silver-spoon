@@ -1,0 +1,32 @@
+@import 'tailwindcss';
+
+html,
+body {
+  background-color: #f9f9fc;
+}
+
+:root {
+  --poppins: 'Poppins', sans-serif;
+  --primary: #5fcdb2;
+  --secondary: #3ead92;
+  --text-primary: #09090b;
+  --text-secondary: #71717a;
+  --aside-grad: linear-gradient(180deg, #039099 0%, rgba(197, 31, 255, 0.88) 111.68%);
+}
+
+@theme {
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+}
+
+@layer utilities {
+  .bg-aside-grad {
+    background: var(--aside-grad);
+  }
+}
+
+.border {
+  border: 1px solid #e4e4e7;
+}
