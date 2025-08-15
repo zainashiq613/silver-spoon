@@ -65,7 +65,7 @@ function Projects() {
   return (
     <section className="relative top-15 px-4 sm:px-6 md:px-10 lg:px-[150px] pb-12 z-10">
       <section className="max-w-[1440px] mx-auto flex flex-col gap-8 py-12">
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-secondary w-full leading-snug">
+        <h1 className="mt-6 sm:mt-0 text-3xl sm:text-4xl lg:text-5xl font-semibold text-secondary w-full leading-snug">
           Lets have a look at my <span className="text-primary">Projects</span>
         </h1>
 
