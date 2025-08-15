@@ -1,12 +1,22 @@
-function Button({ text, cn, icon, position, onClick }) {
+// src/components/shared/Button.jsx
+function Button({ text, variant = "default", icon, position, onClick }) {
+  const baseClasses =
+    "flex items-center gap-2 rounded-3xl px-6 py-2 border transition-colors duration-200";
+
+  const variantClasses =
+    variant === "active"
+      ? "bg-black border-primary text-white"
+      : "bg-transparent border border-gray-400 text-black hover:bg-gray-100";
+
   return (
     <button
+      type="button"
       onClick={onClick}
-      className={`${cn} flex items-center gap-2 bg-primary text-white rounded-3xl px-6 py-2`}
+      className={`${baseClasses} ${variantClasses} pointer-events-auto relative z-10`}
     >
-      <span>{position === 'left' && icon}</span>
+      {position === "left" && <span>{icon}</span>}
       {text}
-      <span>{position === 'right' && icon}</span>
+      {position === "right" && <span>{icon}</span>}
     </button>
   );
 }
