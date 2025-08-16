@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 const ProjectSchema = new mongoose.Schema({
   title: { type: String, required: true },
-  description: String,
+  description: [String],
   stackType: {
     type: String,
-    enum: ["Google App Script", "MERN Stack", "Laravel", "React"],
+    enum: ["App Script", "MERN Stack", "Laravel", "React"],
     required: true,
   },
   githubLink: String,
