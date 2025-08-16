@@ -108,10 +108,9 @@ function Services() {
   };
 
   return (
-    <div className="w-full px-[150px] mb-4">
+    <div className="w-full px-[150px]">
       <div className="flex flex-col gap-3 items-center">
         {/* <Button text={'Book a 15-min call'} /> */}
-
         <div className="grid gap-8 w-full overflow-hidden">
           <div ref={scrollRef} className="flex py-2 rounded-2xl gap-8 overflow-hidden">
             {data.map((item) => (
@@ -140,7 +139,6 @@ function Services() {
             ))}
           </div>
         </div>
-
         <div className="flex gap-4 items-center">
           <button
             onClick={() => scroll(-410)}
