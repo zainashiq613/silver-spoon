@@ -7,11 +7,13 @@ const About = lazy(() => import('./pages/about/About.jsx'));
 const Projects = lazy(() => import('./pages/projects/Projects.jsx'));
 const Contact = lazy(() => import('./pages/contact/Contact.jsx'));
 const NotFound = lazy(() => import('./pages/notFound/NotFound.jsx'));
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
     <>
       <BrowserRouter>
+        <Toaster  position='top-right'/>
         <Suspense fallback={<Loader />}>
           <Routes>
             <Route path="/" element={<WebLayout />}>

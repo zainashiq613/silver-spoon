@@ -1,5 +1,12 @@
-// src/components/shared/Button.jsx
-function Button({ text, variant = "default", icon, position, onClick }) {
+ 
+function Button({
+  text,
+  type = "button",
+  variant = "default",
+  icon,
+  position,
+  onClick,
+}) {
   const baseClasses =
     "flex items-center gap-2 rounded-3xl px-6 py-2 border transition-colors duration-200";
 
@@ -10,7 +17,7 @@ function Button({ text, variant = "default", icon, position, onClick }) {
 
   return (
     <button
-      type="button"
+      type={type}  
       onClick={onClick}
       className={`${baseClasses} ${variantClasses} pointer-events-auto relative z-10`}
     >
