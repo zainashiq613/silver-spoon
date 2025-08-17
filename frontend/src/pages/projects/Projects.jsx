@@ -4,6 +4,8 @@ import FrontEnd from '../../components/projects/FrontEnd';
 import BackEnd from '../../components/projects/BackEnd';
 import Laravel from '../../components/projects/Laravel';
 import AppScript from '../../components/projects/AppScript';
+import Loader from '../../components/shared/Loader';
+import ProjectsLoader from '../../components/projects/ProjectsLoader';
 
 function Projects() {
   const [tab, setTab] = useState('React Projects');
@@ -86,7 +88,7 @@ function Projects() {
       {/* 🔹 Active Content */}
       <div className="w-full relative z-10">
         {loading ? (
-          <p className="text-gray-500 text-sm sm:text-base">Loading projects...</p>
+          <ProjectsLoader />
         ) : activeTab && activeTab.data.length > 0 ? (
           activeTab.component
         ) : (

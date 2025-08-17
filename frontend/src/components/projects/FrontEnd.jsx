@@ -5,7 +5,7 @@ function FrontEnd({ projects }) {
   return (
     <div className="grid grid-cols-2 gap-10">
       {projects.map((project, index) => (
-        <PinContainer key={index} title={project.title} href={project.link}>
+        <PinContainer key={index} title={project.title} href={`/projects/${project?._id}`}>
           <div className="h-full col-span-1 w-full bg-white shadow-md p-7 border rounded-2xl">
             <div className="flex flex-col gap-5">
               <img
