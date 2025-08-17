@@ -6,10 +6,10 @@ import Title from '../../components/shared/Title';
 
 function About() {
   return (
-    <div className="pt-25 flex flex-col gap-10">
+    <div className="pt-35 pb-20 flex flex-col gap-10">
       <AboutCards />
       <OurStory />
-      <Title section={'Technologies'} title={'Technologies'} spanText={'We Use'} />
+      <Title section={'Technologies'} title={'Our'} spanText={'Tech Approach'} />
       <TechIconsGrid />
     </div>
   );

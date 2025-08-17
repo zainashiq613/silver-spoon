@@ -12,7 +12,7 @@ const Header = () => {
   const { pathname } = useLocation();
 
   return (
-    <nav className="bg-[#043655] shadow backdrop-blur-3xl">
+    <nav className="bg-primary shadow backdrop-blur-3xl">
       <div className="flex z-50 flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
         <div className="flex items-center gap-2">
           <img className="w-12 rounded-full" src="/TechTri.jpg" alt="" />
@@ -40,7 +40,7 @@ const LinkItem = ({ page, pathname }) => {
     <Link
       to={page?.link[0]}
       className={`flex items-center py-[10px] px-12 rounded-4xl text-sm ${
-        isLinkActive ? 'bg-white text-[#043655]' : 'text-white hover:bg-white hover:text-[#043655]'
+        isLinkActive ? 'bg-white text-primary' : 'text-white hover:bg-white hover:text-primary'
       }`}
     >
       {page?.icon && React.cloneElement(page?.icon, { isLinkActive })}

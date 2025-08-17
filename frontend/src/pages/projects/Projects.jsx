@@ -61,7 +61,7 @@ function Projects() {
   const activeTab = tabs.find((t) => t.key === tab);
 
   return (
-    <section className="px-[150px] pt-20 pb-6 flex flex-col gap-6">
+    <section className="px-[150px] pt-35 pb-6 flex flex-col gap-6">
       <h1 className="mt-6 sm:mt-0 text-3xl sm:text-4xl lg:text-5xl font-semibold text-secondary w-full leading-snug">
         Lets have a look at my <span className="text-primary">Projects</span>
       </h1>

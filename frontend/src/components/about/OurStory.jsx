@@ -75,7 +75,7 @@ function OurStory() {
           </div>
         </div>
       </div>
-      <div className="group transition duration-300 ease-in-out col-span-6 border shadow rounded-2xl p-6 flex flex-col justify-between">
+      <div className="group bg-white transition duration-300 ease-in-out col-span-6 border shadow rounded-2xl p-6 flex flex-col justify-between">
         <div className="flex w-full justify-between items-center">
           <h1 className="text-3xl font-bold">My Story</h1>
           <div className="inline-block text-4xl">

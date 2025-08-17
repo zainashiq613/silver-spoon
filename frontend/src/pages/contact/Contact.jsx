@@ -16,17 +16,17 @@ function Contact() {
     { link: '', icon: <BiLogoFacebookCircle size={20} />, title: 'Facebook' },
   ];
   return (
-    <section className="px-[150px] pt-20 pb-10">
+    <section className="px-[150px] pt-35 pb-20">
       <div className="mt-6 flex flex-col gap-6">
         <div className="bg-white shadow border rounded-2xl py-5 w-full flex flex-col gap-3 items-center">
-          <h1 className="text-4xl text-secondary font-semibold text-center">
+          <h1 className="text-4xl text-text-primary font-semibold text-center">
             Have an Awsome Project Idea? <br />
             <span className="text-primary">Let’s Discuss</span>
           </h1>
           <ContactForm />
         </div>
         <div className="bg-white border rounded-2xl shadow p-7 flex flex-col gap-4">
-          <p className="text-secondary text-4xl">Elsewhere</p>
+          <p className="text-primary text-4xl">Elsewhere</p>
           <div className="grid grid-cols-2 lg:grid-cols-5 gap-5">
             {links.map((item, index) => (
               <a

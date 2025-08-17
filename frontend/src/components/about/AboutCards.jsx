@@ -22,12 +22,12 @@ function AboutCards() {
   return (
     <div>
       <section className="flex flex-col gap-10 px-[150px]">
-        <h2 className="text-center text-4xl font-semibold">We Are TechTri</h2>
-        <div className="grid grid-cols-3 gap-10">
+        <h2 className="text-center text-primary text-4xl font-semibold">We Are TechTri</h2>
+        <div className="grid grid-cols-3 gap-6">
           {data.map((item) => (
             <div className="bg-white border rounded-2xl p-6 flex flex-col gap-3" key={item.id}>
-              <h3 className="text-xl font-medium">{item.title}</h3>
-              <p className="text-base">{item.desc}</p>
+              <h3 className="text-2xl text-text-primary font-medium">{item.title}</h3>
+              <p className="text-sm text-text-secondary">{item.desc}</p>
             </div>
           ))}
         </div>
