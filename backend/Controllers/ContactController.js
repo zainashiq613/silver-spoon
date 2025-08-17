@@ -1,4 +1,5 @@
 const Contact = require("../Models/ContactModel");
+const NewsLetter = require("../Models/NewsLetter");
 const nodemailer = require("nodemailer");
 
 const sendEmail = async (to, subject, text) => {
@@ -46,6 +47,42 @@ exports.addContact = async (req, res) => {
   } catch (error) {
     res.status(500).json({
       message: "Error adding contact",
+      error: error.message,
+    });
+  }
+};
+exports.newsletter = async (req, res) => {
+  const { email } = req.body;
+
+  if (!email) {
+    return res.status(400).json({ message: "Email is required" });
+  }
+
+  try {
+    const newsletter = new NewsLetter({ email });
+    await newsletter.save();
+
+     
+    await sendEmail(
+      process.env.NOTIFY_EMAIL,
+      "New Newsletter Subscription",
+      `A new user subscribed with email: ${email}`
+    );
+
+     
+    await sendEmail(
+      email,
+      "Thanks for Subscribing",
+      "You’ve been subscribed to our newsletter. Stay tuned for updates!"
+    );
+
+    res.status(201).json({
+      message: "Newsletter subscription successful",
+      newsletter,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: "Error subscribing to newsletter",
       error: error.message,
     });
   }
