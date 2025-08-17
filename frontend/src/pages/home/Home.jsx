@@ -8,7 +8,7 @@ import Button from '../../components/shared/Button';
 
 function Home() {
   return (
-    <div className="pt-25 flex flex-col gap-10">
+    <div className="pt-40 flex flex-col gap-10 mb-20">
       <Welcome />
       <Title
         id={'process'}

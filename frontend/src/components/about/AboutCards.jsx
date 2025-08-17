@@ -25,7 +25,7 @@ function AboutCards() {
         <h2 className="text-center text-4xl font-semibold">We Are TechTri</h2>
         <div className="grid grid-cols-3 gap-10">
           {data.map((item) => (
-            <div className="border rounded-2xl p-6 flex flex-col gap-3" key={item.id}>
+            <div className="bg-white border rounded-2xl p-6 flex flex-col gap-3" key={item.id}>
               <h3 className="text-xl font-medium">{item.title}</h3>
               <p className="text-base">{item.desc}</p>
             </div>

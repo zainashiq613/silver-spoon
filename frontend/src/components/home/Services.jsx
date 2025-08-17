@@ -114,7 +114,10 @@ function Services() {
         <div className="grid gap-8 w-full overflow-hidden">
           <div ref={scrollRef} className="flex py-2 rounded-2xl gap-8 overflow-hidden">
             {data.map((item) => (
-              <div key={item.id} className="p-6 rounded-2xl flex flex-col gap-5 bg-[#ECEDF1]">
+              <div
+                key={item.id}
+                className="p-6 rounded-2xl flex flex-col gap-5 bg-white border shadow-md"
+              >
                 <div className="flex flex-col gap-3 items-center">
                   {item.icon}
                   <h1 className="w-[330px] md:w-[275px] lg:w-[280px] font-semibold text-lg lg:text-xl text-text-dark text-center">

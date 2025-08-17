@@ -1,4 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @import 'tailwindcss';
+
+* {
+  font-family: Outfit;
+}
 
 html,
 body {
@@ -7,7 +12,7 @@ body {
 
 :root {
   --poppins: 'Poppins', sans-serif;
-  --primary: #5fcdb2;
+  --primary: #043655;
   --secondary: #3ead92;
   --text-primary: #09090b;
   --text-secondary: #71717a;

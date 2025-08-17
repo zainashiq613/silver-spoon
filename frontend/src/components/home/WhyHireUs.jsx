@@ -3,12 +3,13 @@ import { GoArrowUpRight } from 'react-icons/go';
 import { MdDownloadForOffline } from 'react-icons/md';
 import Button from '../shared/Button';
 import Modal from '../shared/Modal';
+import ContactForm from '../contact/ContactForm';
 
 function WhyHireUs() {
   const [contactModal, setContactModal] = useState(false);
   return (
     <>
-      <div className="grid grid-cols-12 px-[150px] pb-5 gap-5">
+      <div className="grid grid-cols-12 px-[150px] pb-5 gap-y-10 gap-x-6">
         <div className="col-span-12 lg:col-span-9 flex flex-col gap-5">
           <h1 className="text-5xl font-semibold">
             Have an Awsome Project <br /> Idea? <span className="text-primary">Let’s Discuss</span>
@@ -21,7 +22,7 @@ function WhyHireUs() {
             />
           </div>
         </div>
-        <div className="col-span-12 lg:col-span-3 relative bg-white border shadow rounded-2xl overflow-hidden group">
+        <div className="col-span-12 lg:col-span-3 h-60 relative bg-white border shadow rounded-2xl overflow-hidden group">
           <div className="pt-6 flex gap-6 flex-col items-center">
             <h1 className="text-3xl text-center font-bold">Fiver</h1>
             <div className="w-[200px]">
@@ -48,7 +49,7 @@ function WhyHireUs() {
         </div>
         <div className="col-span-12 lg:col-span-7 p-9 flex flex-col gap-5">
           <h3 className="text-5xl font-semibold">
-            Why <span className="text-primary">Hire me</span> ?
+            Why <span className="text-primary">Hire Us</span> ?
           </h3>
           <p className="text-[#555555E5] text-md">
             With over 5 years of experience in UI/UX and product design, I bring creative thinking
@@ -56,23 +57,29 @@ function WhyHireUs() {
             aesthetically pleasing, and high-performing designs that help businesses grow and stand
             out.
           </p>
-          <div className="flex gap-3">
+          {/* <div className="flex gap-3">
             <div>
               <p className="text-3xl font-bold">250+</p>
-              <span className="text-secondary text-md">Project Completed</span>
+              <span className="text-sky-900 text-md">Project Completed</span>
             </div>
             <div>
               <p className="text-3xl font-bold">50+</p>
-              <span className="text-secondary text-md">Satisfied Clients</span>
+              <span className="text-sky-900 text-md">Satisfied Clients</span>
             </div>
-          </div>
+          </div> */}
           <div>
-            {/* <Button text={'Hire Now'} position={'right'} icon={<GoArrowUpRight size={25} />} /> */}
+            <Button text={'Hire Now'} position={'right'} icon={<GoArrowUpRight size={25} />} />
           </div>
         </div>
       </div>
       {contactModal && (
-        <Modal width={'w-full md:w-[702px]'} onClose={() => setContactModal(false)}></Modal>
+        <Modal
+          title={'Send Us a Message'}
+          width={'w-full md:w-[702px]'}
+          onClose={() => setContactModal(false)}
+        >
+          <ContactForm />
+        </Modal>
       )}
     </>
   );
