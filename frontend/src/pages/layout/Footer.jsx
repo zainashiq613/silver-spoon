@@ -5,7 +5,9 @@ import {
   FaInstagram,
   FaPhoneAlt,
   FaEnvelope,
+  FaWhatsapp,
 } from "react-icons/fa";
+ 
 import { Link, useLocation } from "react-router";
 import Button from "../../components/shared/Button";
 import { toast } from "react-hot-toast";
@@ -126,7 +128,7 @@ const Footer = () => {
               </div>
             </form>
 
-            {/* Social links */}
+          
             <div className="flex space-x-4 pt-2">
               <a
                 href="#"
@@ -134,12 +136,17 @@ const Footer = () => {
               >
                 <FaFacebookF className="text-primary group-hover:text-white" />
               </a>
+
+            
               <a
-                href="#"
+                href="https://wa.me/923134605153" // ✅ WhatsApp link with your number
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-secondary transition-all"
               >
-                <FaLinkedinIn className="text-primary group-hover:text-white" />
+                <FaWhatsapp className="text-primary group-hover:text-white" />
               </a>
+
               <a
                 href="#"
                 className="group w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-secondary transition-all"
