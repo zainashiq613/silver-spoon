@@ -7,7 +7,7 @@ function Title({ id, section, title, desc, spanText }) {
       <h1 className="text-2xl lg:text-4xl font-semibold">
         {title} <span className="text-primary">{spanText}</span>
       </h1>
-      <h3 className="text-sm md:w-[60%] lg:text-lg text-center">{desc}</h3>
+      <h3 className="text-sm md:w-[60%] text-text-secondary lg:text-lg text-center">{desc}</h3>
     </div>
   );
 }

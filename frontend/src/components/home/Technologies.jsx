@@ -47,7 +47,7 @@ const techIcons = [
   { id: 37, name: 'Adobe Premier', icon: 'adobe-premier 1.png' },
   { id: 38, name: 'Adobe Creative Cloud', icon: 'adobe-creative-cloud 1.png' },
 ];
- 
+
 const design = [
   { id: 1, name: 'Figma', icon: '/figma (1) 1.png' },
   { id: 4, name: 'Figma', icon: '/Group 1000002204.png' },
@@ -60,7 +60,7 @@ const design = [
   { id: 37, name: 'Adobe Premier', icon: 'adobe-premier 1.png' },
   { id: 38, name: 'Adobe Creative Cloud', icon: 'adobe-creative-cloud 1.png' },
 ];
- 
+
 const frontEnd = [
   { id: 2, name: 'JavaScript', icon: '/javascript 1.png' },
   { id: 11, name: 'TypeScript', icon: '/Group 1000002172.png' },
@@ -74,7 +74,7 @@ const frontEnd = [
   { id: 35, name: 'Vue.js', icon: 'vue 1.png' },
   { id: 34, name: 'Sass', icon: 'sass 1.png' },
 ];
- 
+
 const backEnd = [
   { id: 3, name: 'PHP', icon: '/php 2.png' },
   { id: 6, name: 'SQL', icon: '/sql 1.png' },
@@ -87,13 +87,12 @@ const backEnd = [
   { id: 32, name: 'Node.js', icon: 'nodejs 2.png' },
   { id: 7, name: 'Kotlin', icon: '/kotlin 1.png' },
 ];
- 
+
 const database = [
   { id: 6, name: 'SQL', icon: '/sql 1.png' },
   { id: 28, name: 'MongoDB', icon: 'mongo-db 1.png' },
   { id: 27, name: 'GraphQL', icon: '/Group 1000002158.png' },
 ];
-
 
 const TechIconsGrid = () => {
   const [tab, setTab] = useState('Design Approach');
@@ -113,7 +112,7 @@ const TechIconsGrid = () => {
         ))}
       </div>
       {tab === 'Design Approach' && (
-        <div className="flex flex-wrap items-center gap-8">
+        <div className="flex flex-wrap items-center justify-center gap-8">
           {design.map(({ id, name, icon }) => (
             <div
               key={id}
@@ -125,7 +124,7 @@ const TechIconsGrid = () => {
         </div>
       )}
       {tab === 'Front-End Approach' && (
-        <div className="flex flex-wrap items-center gap-8">
+        <div className="flex flex-wrap items-center justify-center gap-8">
           {frontEnd.map(({ id, name, icon }) => (
             <div
               key={id}
@@ -137,8 +136,8 @@ const TechIconsGrid = () => {
         </div>
       )}
       {tab === 'Back-End Approach' && (
-        <div className="flex flex-wrap items-center gap-8">
-          {design.map(({ id, name, icon }) => (
+        <div className="flex flex-wrap items-center justify-center gap-8">
+          {backEnd.map(({ id, name, icon }) => (
             <div
               key={id}
               className="bg-[#ECEDF1] cursor-pointer rounded-xl flex items-center justify-center flex-col hover:scale-120 transition-transform px-5 py-5"
@@ -149,7 +148,7 @@ const TechIconsGrid = () => {
         </div>
       )}
       {tab === 'Database Approach' && (
-        <div className="flex flex-wrap items-center gap-8">
+        <div className="flex flex-wrap items-center justify-center gap-8">
           {database.map(({ id, name, icon }) => (
             <div
               key={id}

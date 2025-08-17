@@ -21,17 +21,6 @@ const data = [
     desc2: 'Enhancing usability and accessibility to provide a superior user experience.',
   },
   {
-    id: '2',
-    icon: '',
-    title: 'Software Development',
-    subTitle1: 'Medical Desktop Applications',
-    desc1:
-      'Development of advanced medical software to enhance patient care and streamline healthcare operations.',
-    subTitle2: 'Enterprise Software Solutions',
-    desc2:
-      'Crafting customized desktop applications to optimize your business processes and productivity.',
-  },
-  {
     id: '3',
     icon: '',
     title: 'Web Development',
@@ -64,17 +53,6 @@ const data = [
       'Delivering customized WordPress development that grows with your business and adapts to your evolving needs.',
   },
   {
-    id: '6',
-    icon: '',
-    title: 'SEO Optimization',
-    subTitle1: 'On-Page & Technical SEO',
-    desc1:
-      'Optimizing website structure, content, and performance to improve search engine rankings and user experience.',
-    subTitle2: 'Targeted Visibility',
-    desc2:
-      'Implementing SEO strategies that drive organic traffic and connect your brand with the right audience.',
-  },
-  {
     id: '7',
     icon: '',
     title: 'Content Writing',
@@ -84,17 +62,6 @@ const data = [
     subTitle2: 'Content That Converts',
     desc2:
       'Delivering high-quality writing that resonates with your audience and inspires them to take action.',
-  },
-  {
-    id: '8',
-    icon: '',
-    title: 'Graphic Designing',
-    subTitle1: 'Creative Visual Design',
-    desc1:
-      'Designing eye-catching graphics that reflect your brand and leave a lasting impression.',
-    subTitle2: 'Effective Communication',
-    desc2:
-      'Creating visuals that not only look great but also clearly deliver your message to your audience.',
   },
 ];
 
@@ -120,7 +87,7 @@ function Services() {
               >
                 <div className="flex flex-col gap-3 items-center">
                   {item.icon}
-                  <h1 className="w-[330px] md:w-[275px] lg:w-[280px] font-semibold text-lg lg:text-xl text-text-dark text-center">
+                  <h1 className="w-[330px] md:w-[275px] lg:w-[270px] font-semibold text-lg lg:text-xl text-text-dark text-center">
                     {item.title}
                   </h1>
                 </div>
@@ -144,14 +111,14 @@ function Services() {
         </div>
         <div className="flex gap-4 items-center">
           <button
-            onClick={() => scroll(-410)}
+            onClick={() => scroll(-680)}
             className={`cursor-pointer [box-shadow:inset_0_3px_3px_#6D7AFF40,_inset_0_-3px_8px_#FAFBFF] px-4 py-4 rounded-full flex items-center justify-center text-primary shadow-md bg-[#ECEDF1]`}
           >
             <FaArrowLeft />
           </button>
 
           <button
-            onClick={() => scroll(410)}
+            onClick={() => scroll(680)}
             className={`cursor-pointer [box-shadow:inset_0_3px_3px_#6D7AFF40,_inset_0_-3px_8px_#FAFBFF] px-4 py-4 rounded-full flex items-center justify-center text-primary shadow-md bg-[#ECEDF1]`}
           >
             <FaArrowRight />

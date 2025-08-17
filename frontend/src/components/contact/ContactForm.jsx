@@ -1,29 +1,33 @@
-import React from "react";
-import Input from "../shared/Input";
-import Button from "../shared/Button";
-import toast from "react-hot-toast";
+import React, { useState } from 'react';
+import Input from '../shared/Input';
+import Button from '../shared/Button';
+import toast from 'react-hot-toast';
 
 function ContactForm() {
+  const [loading, setLoading] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     const formData = new FormData(e.target);
-    const name = formData.get("name");
-    const contactInfo = formData.get("contactinfo");
-    const description = formData.get("description");
+    const name = formData.get('name');
+    const contactInfo = formData.get('contactinfo');
+    const description = formData.get('description');
 
     console.log({ name, contactInfo, description }); // Debug
 
-    const response = await fetch("http://localhost:5000/api/contacts", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
+    const response = await fetch('http://localhost:5000/api/contacts', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, contactInfo, description }),
     });
 
     if (response.ok) {
-      toast.success("Message sent successfully!");
+      toast.success('Message sent successfully!');
       e.target.reset();
+      setLoading(false);
     } else {
-      toast.error("Failed to send message. Please try again later.");
+      toast.error('Failed to send message. Please try again later.');
+      setLoading(false);
     }
   };
 
@@ -57,13 +61,17 @@ function ContactForm() {
         <textarea
           id="description"
           name="description"
-          className="bg-white border rounded-md px-4 py-3"
+          className="bg-white border outline-none rounded-md px-4 py-3"
           placeholder="Enter Project Description"
           rows={6}
         />
       </div>
       <div className="col-span-1 md:col-span-2 flex justify-center">
-        <Button type="submit" text="Send Message" />
+        <Button
+          type="submit"
+          className={`!px-7 ${loading ? '!cursor-not-allowed ' : ''}`}
+          text={loading ? 'Sending...' : 'Send Message'}
+        />
       </div>
     </form>
   );

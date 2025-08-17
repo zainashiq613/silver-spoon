@@ -52,10 +52,10 @@ function WhyHireUs() {
             Why <span className="text-primary">Hire Us</span> ?
           </h3>
           <p className="text-[#555555E5] text-md">
-            With over 5 years of experience in UI/UX and product design, I bring creative thinking
-            and strategic execution to every project. I focus on building user-centric,
-            aesthetically pleasing, and high-performing designs that help businesses grow and stand
-            out.
+            At TechTri, we combine creativity and technology to deliver secure, user-focused, and
+            scalable solutions. With strong expertise in UI/UX, product design, and cybersecurity,
+            we help businesses enhance their digital presence, drive growth, and stay ahead in a
+            rapidly evolving tech world.
           </p>
           {/* <div className="flex gap-3">
             <div>

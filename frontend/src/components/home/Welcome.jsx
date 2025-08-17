@@ -6,11 +6,14 @@ function Welcome() {
         <div className="flex items-center">
           <div className="flex flex-col gap-6">
             <h2 className="text-primary font-bold text-6xl">Welcome to TechTri</h2>
-            <p className="text-xl">
-              We are a vibrant student community passionate about fostering collaboration and
-              equipping fellow students with opportunities to stay updated on the latest tech
-              trends. With a focus on cybersecurity and exploring its vast potential, we aim to
-              empower students across Pakistan to shape a secure digital future together.
+            <p className="text-lg text-text-secondary">
+              <span className="font-semibold underline text-text-primary">TechTri</span> is a
+              forward-thinking technology startup committed to driving innovation and delivering
+              cutting-edge solutions. With a strong focus on cybersecurity and emerging
+              technologies, we aim to help individuals and organizations adapt to the fast-evolving
+              digital landscape. At TechTri, we believe in building secure, scalable, and impactful
+              tech solutions that empower businesses and shape a safer digital future across
+              Pakistan and beyond.
             </p>
           </div>
         </div>

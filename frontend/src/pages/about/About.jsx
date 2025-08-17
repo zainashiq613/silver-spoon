@@ -9,15 +9,11 @@ function About() {
   return (
     <div className="pt-35 pb-20 flex flex-col gap-10">
       <AboutCards />
+      <Title section={'About'} title={'Know'} spanText={'Our Story'} />
       <OurStory />
-      <Title section="Process" title="Our" spanText="Work Approach" />
-
+      <Title section="Process" title="Our" spanText="Process" />
       <CompanyStepper />
-      <Title
-        section={"Technologies"}
-        title={"Our"}
-        spanText={"Tech Approach"}
-      />
+      <Title section={'Technologies'} title={'Our'} spanText={'Tech Approach'} />
       <TechIconsGrid />
     </div>
   );

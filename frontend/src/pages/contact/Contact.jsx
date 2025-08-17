@@ -25,25 +25,6 @@ function Contact() {
           </h1>
           <ContactForm />
         </div>
-        <div className="bg-white border rounded-2xl shadow p-7 flex flex-col gap-4">
-          <p className="text-primary text-4xl">Elsewhere</p>
-          <div className="grid grid-cols-2 lg:grid-cols-5 gap-5">
-            {links.map((item, index) => (
-              <a
-                href={item.link}
-                className="text-dark-text border border-[#BBBCBF] px-5 py-1.5 rounded-4xl"
-                key={index}
-              >
-                <div className="flex justify-center py-1 items-center gap-2">
-                  <p className="bg-black rounded-full text-white flex items-center justify-center w-7 h-7">
-                    {item.icon}
-                  </p>
-                  <p className="underline text-dark-text">{item.title}</p>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );
