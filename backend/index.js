@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const dotenv = require('dotenv');
 dotenv.config();
+const path = require('path');
 const mongoose = require("mongoose");
 const ContactRoute = require("./Routes/ContactRoute");
 const ProjectRoute = require("./Routes/ProjectRoute");
@@ -11,6 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/api', ContactRoute);
 app.use('/api', ProjectRoute);
+app.use("/public", express.static(path.join(__dirname, "public")));
 //mong-connection
 const connectDB = async () => {
  try {

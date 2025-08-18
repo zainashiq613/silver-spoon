@@ -1,1 +1,259 @@
-[]
+[
+  {
+    "title": "Electricity Bill Calculator with Google Sheets",
+    "slug": "electricity-bill-calculator-google-sheets",
+    "shortDescription": "Apps Script + Sheets to log units and calculate bills.",
+    "stackType": "App Script",
+    "technologies": ["Google Apps Script", "Google Sheets", "HTML/CSS"],
+    "thumbnail": "/project-image.png",
+    "hero": {
+      "heading": "Electricity Bill Calculator",
+      "subHeading": "Saves meter units to Sheets and computes bills dynamically.",
+      "image": "/project-image.png",
+      "ctaText": "Try Calculator"
+    },
+    "overview": {
+      "title": "Overview",
+      "description": "Inputs are saved to Sheets; formulas and tiers compute totals with clear breakdowns for admins.",
+      "image": "/project-image.png"
+    },
+    "approaches": [
+      "Analysis",
+      "Design",
+      "Prototype",
+      "Integration",
+      "Development",
+      "Testing",
+      "Deployment"
+    ],
+    "problemSolution": {
+      "problem": "Manual bill calculations are slow and error-prone.",
+      "solution": "Automated unit logging and bill computation via Apps Script.",
+      "image": "/project-image.png"
+    },
+    "benefits": [
+      {
+        "heading": "Automation",
+        "description": "Removes manual calculations."
+      },
+      {
+        "heading": "Accuracy",
+        "description": "Consistent formulas and tiers."
+      },
+      {
+        "heading": "Simple Admin",
+        "description": "Review and adjust in Sheets."
+      },
+      { "heading": "Shareable", "description": "Runs inside Google ecosystem." }
+    ],
+    "benefitsImage": "/project-image.png"
+  },
+  {
+    "title": "Client Form Automation & Dynamic Meeting Scheduler",
+    "slug": "client-form-automation-meeting-scheduler",
+    "shortDescription": "Automates form capture, notifications, and meeting scheduling in Sheets.",
+    "stackType": "App Script",
+    "technologies": ["Google Apps Script", "Google Sheets", "Gmail"],
+    "thumbnail": "/project-image.png",
+    "hero": {
+      "heading": "Client Form Automation",
+      "subHeading": "Capture submissions, notify by email, schedule meetings from Sheets.",
+      "image": "/project-image.png",
+      "ctaText": "See Workflow"
+    },
+    "overview": {
+      "title": "Overview",
+      "description": "Saves submissions into Sheets, notifies the team, and offers dynamic dropdowns for quick scheduling.",
+      "image": "/project-image.png"
+    },
+    "approaches": [
+      "Analysis",
+      "Design",
+      "Prototype",
+      "Integration",
+      "Development",
+      "Testing",
+      "Deployment"
+    ],
+    "problemSolution": {
+      "problem": "Fragmented tools slowed response to incoming leads.",
+      "solution": "Centralized data in Sheets with scripted notifications and scheduling.",
+      "image": "/project-image.png"
+    },
+    "benefits": [
+      {
+        "heading": "Faster Response",
+        "description": "Instant team notifications."
+      },
+      { "heading": "Single Source", "description": "All data in one Sheet." },
+      {
+        "heading": "Dynamic Options",
+        "description": "Admins update dropdowns live."
+      },
+      {
+        "heading": "Less Manual Work",
+        "description": "Automated scheduling workflow."
+      }
+    ],
+    "benefitsImage": "/project-image.png"
+  },
+  {
+    "title": "Smart Document Generation & Verification System",
+    "slug": "smart-document-generation-verification",
+    "shortDescription": "MERN app for secure file storage and QR-based verification.",
+    "stackType": "MERN Stack",
+    "technologies": [
+      "MongoDB",
+      "Express",
+      "React",
+      "Node.js",
+      "Cloudinary",
+      "JWT"
+    ],
+    "thumbnail": "/project-image.png",
+    "hero": {
+      "heading": "Smart Document Verification",
+      "subHeading": "Generate docs with QR codes and verify them online in real time.",
+      "image": "/project-image.png",
+      "ctaText": "Request Demo"
+    },
+    "overview": {
+      "title": "Overview",
+      "description": "Docs stored in Cloudinary with metadata in MongoDB; QR codes link to verification pages for authenticity checks.",
+      "image": "/project-image.png"
+    },
+    "approaches": [
+      "Analysis",
+      "Design",
+      "Prototype",
+      "Integration",
+      "Development",
+      "Testing",
+      "Deployment"
+    ],
+    "problemSolution": {
+      "problem": "Manual verification was unreliable and slow.",
+      "solution": "QR-based real-time verification with secure storage and duplicate detection.",
+      "image": "/project-image.png"
+    },
+    "benefits": [
+      { "heading": "Security", "description": "Verified access and storage." },
+      {
+        "heading": "Speed",
+        "description": "Instant QR checks reduce wait times."
+      },
+      { "heading": "Auditability", "description": "Metadata for every asset." },
+      {
+        "heading": "Scalability",
+        "description": "Built with MERN best practices."
+      }
+    ],
+    "benefitsImage": "/project-image.png"
+  },
+  {
+    "title": "QR Code Document Verification System",
+    "slug": "qr-code-document-verification",
+    "shortDescription": "MERN platform generating QR codes for PDFs, DOCX, and images.",
+    "stackType": "MERN Stack",
+    "technologies": ["MongoDB", "Express", "React", "Node.js", "QR", "JWT"],
+    "thumbnail": "/project-image.png",
+    "hero": {
+      "heading": "QR Code Verification",
+      "subHeading": "Dynamic verification URLs provide secure lookups for documents.",
+      "image": "/project-image.png",
+      "ctaText": "Verify a Document"
+    },
+    "overview": {
+      "title": "Overview",
+      "description": "Generates and embeds QR codes in multiple file types and verifies authenticity through Mongo-backed routes.",
+      "image": "/project-image.png"
+    },
+    "approaches": [
+      "Analysis",
+      "Design",
+      "Prototype",
+      "Integration",
+      "Development",
+      "Testing",
+      "Deployment"
+    ],
+    "problemSolution": {
+      "problem": "Hard to verify document authenticity at scale.",
+      "solution": "Unique QR per document with secure backend for verification.",
+      "image": "/project-image.png"
+    },
+    "benefits": [
+      {
+        "heading": "Tamper-Resistant",
+        "description": "Unique tokens per file."
+      },
+      {
+        "heading": "Multi-Format",
+        "description": "PDF, DOCX, and images supported."
+      },
+      {
+        "heading": "Real-Time",
+        "description": "Immediate verification status."
+      },
+      {
+        "heading": "Admin Tools",
+        "description": "Manage and track verification."
+      }
+    ],
+    "benefitsImage": "/project-image.png"
+  },
+  {
+    "title": "MERN Expense Tracker Web App",
+    "slug": "mern-expense-tracker",
+    "shortDescription": "Track expenses with auth, charts, and monthly summaries.",
+    "stackType": "MERN Stack",
+    "technologies": [
+      "MongoDB",
+      "Express",
+      "React",
+      "Node.js",
+      "JWT",
+      "Chart.js",
+      "TailwindCSS"
+    ],
+    "thumbnail": "/project-image.png",
+    "hero": {
+      "heading": "Expense Tracker",
+      "subHeading": "Secure MERN app with dashboards and visual insights.",
+      "image": "/project-image.png",
+      "ctaText": "View Dashboard"
+    },
+    "overview": {
+      "title": "Overview",
+      "description": "Users set income, add categorized expenses, and view real-time balances and charts with a modern UI.",
+      "image": "/project-image.png"
+    },
+    "approaches": [
+      "Analysis",
+      "Design",
+      "Prototype",
+      "Integration",
+      "Development",
+      "Testing",
+      "Deployment"
+    ],
+    "problemSolution": {
+      "problem": "Manual expense tracking lacked visibility and insights.",
+      "solution": "JWT auth, CRUD, and charts for a complete personal finance view.",
+      "image": "/project-image.png"
+    },
+    "benefits": [
+      {
+        "heading": "Actionable Insights",
+        "description": "Charts and summaries reveal trends."
+      },
+      { "heading": "Security", "description": "JWT and protected routes." },
+      {
+        "heading": "Productivity",
+        "description": "Fast entry and category management."
+      },
+      { "heading": "Responsive", "description": "Usable on any device." }
+    ],
+    "benefitsImage": "/project-image.png"
+  }
+]
