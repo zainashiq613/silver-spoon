@@ -10,10 +10,12 @@ import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 // import Content from '../../assets/svgs/Content';
 // import Graphic from '../../assets/svgs/Graphic';
 
+import { FiMonitor, FiCode, FiFileText, FiEdit } from 'react-icons/fi';
+
 const data = [
   {
     id: '1',
-    icon: '',
+    icon: <FiMonitor size={30} className="text-primary" />, // UI/UX Design
     title: 'UI/UX Design',
     subTitle1: 'User Interface Design',
     desc1: 'Crafting intuitive and visually appealing interfaces for enhanced user engagement.',
@@ -22,48 +24,34 @@ const data = [
   },
   {
     id: '3',
-    icon: '',
+    icon: <FiCode size={30} className="text-primary" />, // Web Development
     title: 'Web Development',
     subTitle1: 'Website Design & Development',
-    desc1:
-      'Designing responsive and engaging websites that reflect your brand and captivate your audience.',
+    desc1: 'Designing responsive and engaging websites that reflect your brand and captivate your audience.',
     subTitle2: 'Web Applications',
     desc2: 'Developing custom web applications tailored to your specific business needs.',
   },
   {
-    id: '4',
-    icon: '',
-    title: 'Mobile Development',
-    subTitle1: 'iOS and Android Apps',
-    desc1:
-      'Building seamless, user-friendly, and feature-rich mobile apps tailored for both iOS and Android platforms.',
-    subTitle2: 'Cross-Platform Apps',
-    desc2:
-      'Creating high-performance apps that ensure a unified and consistent user experience across all major mobile platforms.',
-  },
-  {
     id: '5',
-    icon: '',
+    icon: <FiFileText size={30} className="text-primary" />, // WordPress Development
     title: 'WordPress Development',
     subTitle1: 'Custom WordPress Websites',
-    desc1:
-      'Designing dynamic, scalable, and easy-to-manage websites tailored to your brand and business goals.',
+    desc1: 'Designing dynamic, scalable, and easy-to-manage websites tailored to your brand and business goals.',
     subTitle2: 'Scalable & Flexible Solutions',
-    desc2:
-      'Delivering customized WordPress development that grows with your business and adapts to your evolving needs.',
+    desc2: 'Delivering customized WordPress development that grows with your business and adapts to your evolving needs.',
   },
   {
     id: '7',
-    icon: '',
+    icon: <FiEdit size={30} className="text-primary" />, // Content Writing
     title: 'Content Writing',
     subTitle1: 'Creative & Impactful Content',
-    desc1:
-      'Crafting clear, engaging, and persuasive content that aligns with your brand voice and goals.',
+    desc1: 'Crafting clear, engaging, and persuasive content that aligns with your brand voice and goals.',
     subTitle2: 'Content That Converts',
-    desc2:
-      'Delivering high-quality writing that resonates with your audience and inspires them to take action.',
+    desc2: 'Delivering high-quality writing that resonates with your audience and inspires them to take action.',
   },
 ];
+
+ 
 
 function Services() {
   const scrollRef = useRef(null);

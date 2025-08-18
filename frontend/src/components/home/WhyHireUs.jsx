@@ -4,6 +4,7 @@ import { MdDownloadForOffline } from 'react-icons/md';
 import Button from '../shared/Button';
 import Modal from '../shared/Modal';
 import ContactForm from '../contact/ContactForm';
+import { Link } from 'react-router-dom';
 
 function WhyHireUs() {
   const [contactModal, setContactModal] = useState(false);
@@ -12,13 +13,14 @@ function WhyHireUs() {
       <div className="grid grid-cols-12 px-[150px] pb-5 gap-y-10 gap-x-6">
         <div className="col-span-12 lg:col-span-9 flex flex-col gap-5">
           <h1 className="text-5xl font-semibold">
-            Have an Awsome Project <br /> Idea? <span className="text-primary">Let’s Discuss</span>
+            Have an Awsome Project <br /> Idea?{" "}
+            <span className="text-primary">Let’s Discuss</span>
           </h1>
           <div>
             <Button
               onClick={() => setContactModal(true)}
-              cn={'cursor-pointer'}
-              text={'Send Message'}
+              cn={"cursor-pointer"}
+              text={"Send Message"}
             />
           </div>
         </div>
@@ -52,30 +54,28 @@ function WhyHireUs() {
             Why <span className="text-primary">Hire Us</span> ?
           </h3>
           <p className="text-[#555555E5] text-md">
-            At TechTri, we combine creativity and technology to deliver secure, user-focused, and
-            scalable solutions. With strong expertise in UI/UX, product design, and cybersecurity,
-            we help businesses enhance their digital presence, drive growth, and stay ahead in a
-            rapidly evolving tech world.
+            At TechTri, we combine creativity and technology to deliver secure,
+            user-focused, and scalable solutions. With strong expertise in
+            UI/UX, product design, and cybersecurity, we help businesses enhance
+            their digital presence, drive growth, and stay ahead in a rapidly
+            evolving tech world.
           </p>
-          {/* <div className="flex gap-3">
-            <div>
-              <p className="text-3xl font-bold">250+</p>
-              <span className="text-sky-900 text-md">Project Completed</span>
-            </div>
-            <div>
-              <p className="text-3xl font-bold">50+</p>
-              <span className="text-sky-900 text-md">Satisfied Clients</span>
-            </div>
-          </div> */}
+
           <div>
-            <Button text={'Hire Now'} position={'right'} icon={<GoArrowUpRight size={25} />} />
+            <Link to={"/contact"}>
+              <Button
+                text={"Hire Now"}
+                position={"right"}
+                icon={<GoArrowUpRight size={25} />}
+              />
+            </Link>
           </div>
         </div>
       </div>
       {contactModal && (
         <Modal
-          title={'Send Us a Message'}
-          width={'w-full md:w-[702px]'}
+          title={"Send Us a Message"}
+          width={"w-full md:w-[702px]"}
           onClose={() => setContactModal(false)}
         >
           <ContactForm />

@@ -62,37 +62,39 @@ function Projects() {
   const activeTab = tabs.find((t) => t.key === tab);
 
   return (
-    <section className="px-[150px] pt-35 pb-20 flex flex-col gap-6">
-      <h1 className="mt-6 sm:mt-0 text-3xl sm:text-4xl lg:text-5xl font-semibold text-secondary w-full leading-snug">
+    <section className="px-4 sm:px-6 md:px-12 lg:px-36 pt-10 sm:pt-14 pb-20 flex flex-col gap-6">
+      <h1 className="mt-6 sm:mt-0 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-secondary w-full leading-snug">
         Lets have a look at my <span className="text-primary">Projects</span>
       </h1>
 
-      {/* 🔹 Tabs */}
-      <div className="relative z-20 pointer-events-auto flex flex-wrap gap-3 sm:gap-4 md:gap-6">
+      {/* Tabs */}
+      <div className="relative z-20 pointer-events-auto flex flex-wrap gap-2 sm:gap-4 md:gap-6">
         {tabs.map(({ key, label }) => (
           <div
             key={key}
             onClick={() => setTab(key)}
-            className={`px-6 py-2 rounded-full cursor-pointer border transition-colors duration-300
-              ${
-                tab === key
-                  ? 'bg-primary text-white border-primary'
-                  : 'bg-transparent text-secondary border-gray-300 hover:bg-gray-100'
-              }`}
+            className={`px-4 sm:px-6 py-2 rounded-full cursor-pointer border transition-colors duration-300
+          ${
+            tab === key
+              ? "bg-primary text-white border-primary"
+              : "bg-transparent text-secondary border-gray-300 hover:bg-gray-100"
+          }`}
           >
             {label}
           </div>
         ))}
       </div>
 
-      {/* 🔹 Active Content */}
-      <div className="w-full relative z-10">
+      {/* Active Content */}
+      <div className="w-full relative z-10 mt-6">
         {loading ? (
           <ProjectsLoader />
         ) : activeTab && activeTab.data.length > 0 ? (
           activeTab.component
         ) : (
-          <p className="text-gray-500 text-sm sm:text-base">No projects found for this category.</p>
+          <p className="text-gray-500 text-sm sm:text-base">
+            No projects found for this category.
+          </p>
         )}
       </div>
     </section>

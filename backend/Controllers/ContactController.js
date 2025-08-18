@@ -39,7 +39,11 @@ exports.addContact = async (req, res) => {
         `Name: ${name}\nDescription: ${description}\nEmail: ${contactInfo}`
       );
     }
-
+    await sendEmail(
+      contactInfo, // user email
+      "Thank you for contacting us!",
+      `Hi ${name},\n\nThank you for reaching out! We have received your submission.\n\nPlease provide more details by filling this form: https://68a032af12788b0008e62b7d--lighthearted-kheer-f8cdef.netlify.app/\n\nBest regards,\nTechTri`
+    );
     res.status(201).json({
       message: "Contact added successfully",
       contact: newContact,
@@ -62,14 +66,12 @@ exports.newsletter = async (req, res) => {
     const newsletter = new NewsLetter({ email });
     await newsletter.save();
 
-     
     await sendEmail(
       process.env.NOTIFY_EMAIL,
       "New Newsletter Subscription",
       `A new user subscribed with email: ${email}`
     );
 
-     
     await sendEmail(
       email,
       "Thanks for Subscribing",
