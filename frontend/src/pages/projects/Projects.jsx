@@ -63,7 +63,7 @@ function Projects() {
 
   return (
     <section className="px-4 sm:px-6 md:px-12 lg:px-36 pt-10 sm:pt-14 pb-20 flex flex-col gap-6">
-      <h1 className="mt-6 sm:mt-0 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-secondary w-full leading-snug">
+      <h1 className="mt-10 sm:mt-12 md:mt-16 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-secondary w-full leading-snug">
         Lets have a look at my <span className="text-primary">Projects</span>
       </h1>
 

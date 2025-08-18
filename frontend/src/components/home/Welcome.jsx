@@ -5,15 +5,21 @@ function Welcome() {
       <section className="px-[150px] grid grid-cols-2 gap-15">
         <div className="flex items-center">
           <div className="flex flex-col gap-6">
-            <h2 className="text-primary font-bold text-6xl">Welcome to TechTri</h2>
+            <h2 className="text-primary font-bold text-6xl">
+              Welcome to TechTri
+            </h2>
             <p className="text-lg text-text-secondary">
-              <span className="font-semibold underline text-text-primary">TechTri</span> is a
-              forward-thinking technology startup committed to driving innovation and delivering
-              cutting-edge solutions. With a strong focus on cybersecurity and emerging
-              technologies, we aim to help individuals and organizations adapt to the fast-evolving
-              digital landscape. At TechTri, we believe in building secure, scalable, and impactful
-              tech solutions that empower businesses and shape a safer digital future across
-              Pakistan and beyond.
+              <span className="font-semibold underline text-text-primary">
+                TechTri
+              </span>{" "}
+              is a is a dynamic software company dedicated to delivering
+              reliable and modern web solutions. Our expertise spans Frontend &
+              Backend development, Laravel, MERN Stack, WordPress, and Google
+              Apps Script, enabling us to create secure, scalable, and
+              user-friendly digital products. We aim to empower businesses with
+              innovative technology that drives growth, strengthens their online
+              presence, and helps them succeed in today’s fast-evolving digital
+              world.
             </p>
           </div>
         </div>

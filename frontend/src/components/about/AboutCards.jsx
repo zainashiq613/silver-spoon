@@ -3,18 +3,18 @@ import React from 'react';
 const data = [
   {
     id: 1,
-    title: 'Vision',
-    desc: 'Our vision is to foster practical skills and a passion for technology and innovation in Pakistan, focusing on cybersecurity, blockchain, and other emerging fields. We envision a collaborative environment where students are inspired, equipped, and motivated to pioneer future innovations. Our ultimate goal is to transform Pakistan into a technology hub that drives positive change and enhances the quality of life for all.',
+    title: "Vision",
+    desc: "At TechTri, our vision is to become a leading digital solutions provider, empowering businesses with innovative, scalable, and user-focused technologies. We aspire to transform ideas into impactful digital experiences by leveraging modern frontend frameworks, robust backend systems, and smart automation. Our ultimate vision is to drive growth and innovation, making TechTri a trusted partner for businesses worldwide.",
   },
   {
     id: 2,
-    title: 'Mission',
-    desc: 'Tech Hierarchy empowers Pakistani youth with essential tech skills for careers in blockchain, cybersecurity and other emerging fields. Through interactive webinars, immersive courses, and specialized bootCamps, we bridge the gap between academia and industry, cultivating a diverse community of tech enthusiasts. Our focus on continuous learning, collaboration, and financial independence equips students to excel in the digital age.',
+    title: "Mission",
+    desc: "Our mission is to deliver reliable, efficient, and cutting-edge solutions using Laravel, MERN stack, WordPress, and Google App Script. We strive to bridge the gap between business challenges and technology by creating tailored digital products that help organizations grow. At TechTri, we are committed to building solutions that are not only technically strong but also user-friendly, future-ready, and impactful.",
   },
   {
     id: 3,
-    title: 'Values',
-    desc: ' Setting high standards and consistently pushing boundaries to achieve excellence. Prioritizing the cultivation of trust, respect, and collaborative relationships to foster a strong sense of community. Embracing calculated risks to drive innovation and propel progress forward. Adopting an ownership mentality by taking accountability for our actions and actively seeking ways to positively contribute to the community.',
+    title: "Values",
+    desc: "Innovation at the core — we embrace creativity and new ideas to build future-ready solutions. Commitment to quality — ensuring excellence in every project we deliver. Collaboration — working closely with our clients as partners to achieve success. Adaptability — staying ahead with evolving technologies like MERN, Laravel, and automation tools. Integrity — building trust through transparency, reliability, and accountability in everything we do.",
   },
 ];
 
