@@ -108,8 +108,8 @@ const Footer = () => {
           <h3 className="text-xl sm:text-2xl font-semibold">
             Sign up for News & Updates
           </h3>
-          <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-            <div className="flex flex-col sm:flex-row gap-2 justify-center md:justify-start">
+          <form onSubmit={handleSubmit} className="w-full">
+            <div className="flex items-stretch gap-2 w-full">
               <input
                 type="email"
                 name="email"
@@ -120,7 +120,7 @@ const Footer = () => {
               <Button
                 text={loading ? "Sending..." : "Send"}
                 type="submit"
-                className="bg-white !text-primary hover:!text-white rounded-md"
+                className="px-4 sm:px-6 bg-white !text-primary hover:!text-white rounded-md whitespace-nowrap"
               />
             </div>
           </form>
