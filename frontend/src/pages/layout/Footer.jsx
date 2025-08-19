@@ -7,27 +7,26 @@ import {
   FaEnvelope,
   FaWhatsapp,
 } from "react-icons/fa";
- 
+
 import { Link, useLocation } from "react-router";
 import Button from "../../components/shared/Button";
 import { toast } from "react-hot-toast";
 
 const pages = [
-  { id: 1, title: "Home", link: ["/"], icon: "" },
-  { id: 2, title: "About", link: ["/about"], icon: "" },
-  { id: 3, title: "Projects", link: ["/projects"], icon: "" },
-  { id: 4, title: "Contact", link: ["/contact"], icon: "" },
+  { id: 1, title: "Home", link: ["/"] },
+  { id: 2, title: "About", link: ["/about"] },
+  { id: 3, title: "Projects", link: ["/projects"] },
+  { id: 4, title: "Contact", link: ["/contact"] },
 ];
 
 const Footer = () => {
   const { pathname } = useLocation();
   const currentYear = new Date().getFullYear();
-
-  const [loading, setLoading] = useState(false); // 🔥 add state
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); // start loading
+    setLoading(true);
 
     const formData = new FormData(e.target);
     const email = formData.get("email");
@@ -41,14 +40,14 @@ const Footer = () => {
 
       if (response.ok) {
         toast.success("Subscription successful");
-        e.target.reset(); // clear input
+        e.target.reset();
       } else {
         toast.error("Subscription failed");
       }
-    } catch (error) {
+    } catch {
       toast.error("Something went wrong");
     } finally {
-      setLoading(false); // stop loading
+      setLoading(false);
     }
   };
 
@@ -61,20 +60,21 @@ const Footer = () => {
 
   return (
     <footer className="bg-primary text-white">
-      <div className="relative max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-10">
+      {/* Main Footer Content */}
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-10 grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Quick Links */}
-        <div className="flex flex-col gap-4">
-          <h3 className="text-2xl font-semibold">Quick Links</h3>
-          <ul className="flex flex-col gap-1">
+        <div className="flex flex-col gap-4 text-center md:text-left">
+          <h3 className="text-xl sm:text-2xl font-semibold">Quick Links</h3>
+          <ul className="flex flex-col gap-2">
             {pages.map((page) => (
               <li key={page.id}>
                 <Link
                   to={page.link[0]}
-                  className={`flex w-fit items-center text-white hover:text-secondary transition-all group ${
-                    pathname === page.link[0] ? "text-secondary" : ""
+                  className={`flex items-center justify-center md:justify-start text-sm sm:text-base hover:text-secondary transition group ${
+                    pathname === page.link[0] ? "text-secondary" : "text-white"
                   }`}
                 >
-                  <span className="mr-3 text-secondary opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span className="mr-2 text-secondary opacity-0 group-hover:opacity-100 transition">
                     →
                   </span>
                   <span className="group-hover:translate-x-1 transition-transform">
@@ -87,13 +87,13 @@ const Footer = () => {
         </div>
 
         {/* Services */}
-        <div className="flex flex-col gap-4">
-          <h3 className="text-2xl font-semibold">Services</h3>
-          <ul className="flex flex-col gap-1">
+        <div className="flex flex-col gap-4 text-center md:text-left">
+          <h3 className="text-xl sm:text-2xl font-semibold">Services</h3>
+          <ul className="flex flex-col gap-2">
             {services.map((service, index) => (
-              <li className="w-fit" key={index}>
-                <p className="flex items-center text-white hover:text-secondary transition-all group">
-                  <div className="mr-3 w-2 h-2 rounded-full bg-secondary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <li key={index} className="w-fit mx-auto md:mx-0">
+                <p className="flex items-center text-sm sm:text-base hover:text-secondary transition group">
+                  <span className="mr-2 w-2 h-2 rounded-full bg-secondary opacity-0 group-hover:opacity-100 transition"></span>
                   <span className="group-hover:translate-x-1 transition-transform">
                     {service}
                   </span>
@@ -104,84 +104,79 @@ const Footer = () => {
         </div>
 
         {/* Newsletter */}
-        <div className="flex flex-col gap-4">
-          <h3 className="text-2xl font-semibold">
-            Sign up for News and updates
+        <div className="flex flex-col gap-4 text-center md:text-left">
+          <h3 className="text-xl sm:text-2xl font-semibold">
+            Sign up for News & Updates
           </h3>
-          <div className="flex flex-col gap-2">
-            <form onSubmit={handleSubmit}>
-              <div className="flex gap-2">
-                <input
-                  placeholder="Enter Email"
-                  type="email"
-                  className="bg-white text-text-secondary px-4 border outline-none py-2.5 rounded-md"
-                  name="email"
-                  required
-                />
-                <Button
-                  text={loading ? "Sending..." : "Send"} // 🔥 show loading text
-                  type="submit"
-                  className={
-                    "bg-white !text-primary hover:!text-white rounded-md"
-                  }
-                />
-              </div>
-            </form>
-
-          
-            <div className="flex space-x-4 pt-2">
-              <a
-                href="#"
-                className="group w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-secondary transition-all"
-              >
-                <FaFacebookF className="text-primary group-hover:text-white" />
-              </a>
-
-            
-              <a
-                href="https://wa.me/923134605153" // ✅ WhatsApp link with your number
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-secondary transition-all"
-              >
-                <FaWhatsapp className="text-primary group-hover:text-white" />
-              </a>
-
-              <a
-                href="#"
-                className="group w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-secondary transition-all"
-              >
-                <FaInstagram className="text-primary group-hover:text-white" />
-              </a>
+          <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+            <div className="flex flex-col sm:flex-row gap-2 justify-center md:justify-start">
+              <input
+                type="email"
+                name="email"
+                required
+                placeholder="Enter Email"
+                className="flex-1 px-4 py-2.5 rounded-md bg-white text-gray-700 text-sm sm:text-base border outline-none"
+              />
+              <Button
+                text={loading ? "Sending..." : "Send"}
+                type="submit"
+                className="bg-white !text-primary hover:!text-white rounded-md"
+              />
             </div>
+          </form>
 
-            {/* Contact Info */}
-            <div className="flex flex-col gap-1">
-              <div className="flex items-center">
-                <FaPhoneAlt className="text-white mr-3" />
-                <span className="text-white">03134605153</span>
-              </div>
-              <div className="flex items-center">
-                <FaEnvelope className="text-white mr-3" />
-                <span className="text-white">tech.techtri@gmail.com</span>
-              </div>
+          {/* Social Icons */}
+          <div className="flex justify-center md:justify-start space-x-4 pt-2">
+            <a
+              href="#"
+              className="group w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-secondary transition"
+            >
+              <FaFacebookF className="text-primary group-hover:text-white" />
+            </a>
+
+            <a
+              href="https://wa.me/923134605153"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-secondary transition"
+            >
+              <FaWhatsapp className="text-primary group-hover:text-white" />
+            </a>
+
+            <a
+              href="#"
+              className="group w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-secondary transition"
+            >
+              <FaInstagram className="text-primary group-hover:text-white" />
+            </a>
+          </div>
+
+          {/* Contact Info */}
+          <div className="flex flex-col items-center md:items-start gap-2 pt-2 text-sm sm:text-base">
+            <div className="flex items-center gap-2">
+              <FaPhoneAlt /> <span>03134605153</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <FaEnvelope /> <span>tech.techtri@gmail.com</span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Footer bottom */}
-      <div className="relative bg-primary py-3 border-t border-white">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
-          <div className="text-white flex items-center gap-1">
-            <img className="w-10 rounded-full" src="/TechTri.jpg" alt="" />
-            <div className="flex flex-col">
-              <h3 className="text-3xl leading-5 font-bold">TechTri</h3>
-            </div>
+      {/* Footer Bottom */}
+      <div className="bg-primary border-t border-white py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-3 text-center md:text-left">
+          <div className="flex items-center gap-3">
+            <img
+              className="w-10 h-10 rounded-full"
+              src="/TechTri.jpg"
+              alt="TechTri Logo"
+            />
+            <h3 className="text-2xl font-bold">TechTri</h3>
           </div>
-          <div className="text-white text-sm">
+          <p className="text-xs sm:text-sm">
             © {currentYear} TechTri. All Rights Reserved.
-          </div>
+          </p>
         </div>
       </div>
     </footer>
