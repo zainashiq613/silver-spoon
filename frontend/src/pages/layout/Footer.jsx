@@ -11,7 +11,7 @@ import {
 import { Link, useLocation } from "react-router";
 import Button from "../../components/shared/Button";
 import { toast } from "react-hot-toast";
-
+const apiUrl = import.meta.env.VITE_API_URL;
 const pages = [
   { id: 1, title: "Home", link: ["/"] },
   { id: 2, title: "About", link: ["/about"] },
@@ -32,7 +32,7 @@ const Footer = () => {
     const email = formData.get("email");
 
     try {
-      const response = await fetch("http://localhost:5000/api/newsletter", {
+      const response = await fetch(`${apiUrl}/api/newsletter`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),

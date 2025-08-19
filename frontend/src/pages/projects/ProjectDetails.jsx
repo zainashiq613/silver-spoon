@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { motion } from "framer-motion";
 import { FiArrowRight, FiExternalLink } from "react-icons/fi";
-
+const apiUrl = import.meta.env.VITE_API_URL;
 // Animation variants
 const container = {
   hidden: { opacity: 0 },
@@ -30,9 +30,7 @@ export default function ProjectDetails() {
   useEffect(() => {
     const fetchProject = async () => {
       try {
-        const res = await axios.get(
-          `http://localhost:5000/api/get-project/${slug}`
-        );
+        const res = await axios.get(`${apiUrl}/api/get-project/${slug}`);
         setProject(res.data.project);
       } catch (err) {
         console.error(err);

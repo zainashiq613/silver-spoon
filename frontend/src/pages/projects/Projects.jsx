@@ -6,7 +6,7 @@ import Laravel from '../../components/projects/Laravel';
 import AppScript from '../../components/projects/AppScript';
 import Loader from '../../components/shared/Loader';
 import ProjectsLoader from '../../components/projects/ProjectsLoader';
-
+const apiUrl = import.meta.env.VITE_API_URL;
 function Projects() {
   const [tab, setTab] = useState('React Projects');
   const [projects, setProjects] = useState([]);
@@ -15,7 +15,7 @@ function Projects() {
   useEffect(() => {
     async function fetchProjects() {
       try {
-        const res = await fetch('http://localhost:5000/api/get-projects');
+        const res = await fetch(`${apiUrl}/api/get-projects`);
         const data = await res.json();
         setProjects(data.projects || []);
       } catch (err) {

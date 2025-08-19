@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Input from '../shared/Input';
 import Button from '../shared/Button';
 import toast from 'react-hot-toast';
-
+const apiUrl = import.meta.env.VITE_API_URL;
 function ContactForm() {
   const [loading, setLoading] = useState(false);
   const handleSubmit = async (e) => {
@@ -15,7 +15,7 @@ function ContactForm() {
 
     console.log({ name, contactInfo, description }); // Debug
 
-    const response = await fetch('http://localhost:5000/api/contacts', {
+    const response = await fetch(`${apiUrl}/api/contacts`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, contactInfo, description }),
