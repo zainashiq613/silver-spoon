@@ -140,7 +140,7 @@ export default function ProjectDetails() {
                       src={
                         project.hero.image.startsWith("http")
                           ? project.hero.image
-                          : `http://localhost:5000/public/${project.hero.image}`
+                          : `${apiUrl}/public/${project.hero.image}`
                       }
                       alt={project.hero.heading}
                       className="w-full h-full object-cover"
@@ -243,7 +243,7 @@ export default function ProjectDetails() {
                     src={
                       project.overview.image.startsWith("http")
                         ? project.overview.image
-                        : `http://localhost:5000/public/${project.overview.image}`
+                        : `${apiUrl}/public/${project.overview.image}`
                     }
                     alt={project.overview.title || project.title}
                     className="w-full h-full object-cover"
@@ -271,7 +271,7 @@ export default function ProjectDetails() {
                       src={
                         project.problemSolution.image.startsWith("http")
                           ? project.problemSolution.image
-                          : `http://localhost:5000/public/${project.problemSolution.image}`
+                          : `${apiUrl}/public/${project.problemSolution.image}`
                       }
                       alt="Problem Solution"
                       className="w-full h-full object-cover"
@@ -391,7 +391,7 @@ export default function ProjectDetails() {
                         src={
                           project.benefitsImage.startsWith("http")
                             ? project.benefitsImage
-                            : `http://localhost:5000/public/${project.benefitsImage}`
+                            : `${apiUrl}/public/${project.benefitsImage}`
                         }
                         alt="Benefits collage"
                         className="w-full h-full object-cover"
