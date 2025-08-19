@@ -1,4 +1,3 @@
-
 "use client";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -54,7 +53,7 @@ export default function ProjectDetails() {
 
   if (!project)
     return (
-      <div className="text-center mt-20">
+      <div className="text-center mt-20 px-4">
         <h2 className="text-3xl font-bold text-[var(--text-primary)]">
           Project not found
         </h2>
@@ -93,22 +92,22 @@ export default function ProjectDetails() {
                 >
                   Featured Project
                 </span>
-                <h1 className="text-4xl md:text-6xl font-extrabold text-[var(--text-primary)] leading-tight">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[var(--text-primary)] leading-tight">
                   {project.hero.heading}{" "}
                   <span className="text-[var(--secondary)]">
                     {project.hero.subHeading}
                   </span>
                 </h1>
-                <p className="mt-6 text-lg text-[var(--text-secondary)] max-w-2xl">
+                <p className="mt-6 text-base sm:text-lg text-[var(--text-secondary)] max-w-full md:max-w-2xl">
                   {project.shortDescription}
                 </p>
                 {project.hero.ctaText && (
-                  <div className="mt-8 flex flex-wrap gap-4">
+                  <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row sm:flex-wrap gap-4">
                     <motion.a
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       href="#contact"
-                      className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-white shadow-lg"
+                      className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-white shadow-lg w-full sm:w-auto text-center"
                       style={{ background: "var(--secondary)" }}
                     >
                       {project.hero.ctaText}
@@ -121,7 +120,7 @@ export default function ProjectDetails() {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold border-2 border-[var(--secondary)] text-[var(--secondary)]"
+                        className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold border-2 border-[var(--secondary)] text-[var(--secondary)] w-full sm:w-auto text-center"
                       >
                         Visit Live Site
                         <FiExternalLink className="ml-2" />
@@ -136,7 +135,7 @@ export default function ProjectDetails() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="relative"
+                  className="relative mt-8 lg:mt-0"
                 >
                   <div className="aspect-[16/9] w-full rounded-2xl overflow-hidden ring-1 ring-black/5 bg-white shadow-2xl transform hover:scale-[1.02] transition-transform duration-300">
                     <img
@@ -151,18 +150,18 @@ export default function ProjectDetails() {
                     />
                   </div>
                   {project.techStack && (
-                    <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-white px-4 py-2 rounded-full shadow-lg flex items-center">
+                    <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-white px-4 py-2 rounded-full shadow-lg flex items-center text-xs sm:text-sm md:text-base">
                       <div className="flex space-x-2">
                         {project.techStack.slice(0, 3).map((tech, i) => (
                           <span
                             key={i}
-                            className="text-xs font-medium text-[var(--text-primary)]"
+                            className="text-xs sm:text-sm font-medium text-[var(--text-primary)]"
                           >
                             {tech}
                           </span>
                         ))}
                         {project.techStack.length > 3 && (
-                          <span className="text-xs font-medium text-[var(--text-secondary)]">
+                          <span className="text-xs sm:text-sm font-medium text-[var(--text-secondary)]">
                             +{project.techStack.length - 3} more
                           </span>
                         )}
@@ -177,14 +176,14 @@ export default function ProjectDetails() {
       )}
 
       {/* ======= PROJECT NAVIGATION ======= */}
-      <div className="sticky top-0 z-10 bg-white/80 backdrop-blur-md border-b border-gray-200">
+      <div className="sticky top-0 z-10 bg-white/90 backdrop-blur-md border-b border-gray-200">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <nav className="flex overflow-x-auto py-4">
             {["overview", "problem", "benefits"].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-4 py-2 font-medium text-sm whitespace-nowrap ${
+                className={`px-4 py-2 font-medium text-sm whitespace-nowrap flex-shrink-0 ${
                   activeTab === tab
                     ? "text-[var(--secondary)] border-b-2 border-[var(--secondary)]"
                     : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
@@ -198,7 +197,7 @@ export default function ProjectDetails() {
       </div>
 
       {/* ======= MAIN CONTENT ======= */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16 space-y-16">
         {/* ======= OVERVIEW ======= */}
         {activeTab === "overview" && project.overview && (
           <motion.section
@@ -208,16 +207,16 @@ export default function ProjectDetails() {
             className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
           >
             <motion.div variants={item} className="order-2 lg:order-1">
-              <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)]">
+              <h2 className="text-3xl sm:text-4xl md:text-4xl font-bold text-[var(--text-primary)]">
                 Project{" "}
                 <span className="text-[var(--secondary)]">Overview</span>
               </h2>
-              <p className="mt-6 text-lg text-[var(--text-secondary)] leading-relaxed">
+              <p className="mt-4 sm:mt-6 text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
                 {project.overview.description}
               </p>
 
               {project.stats && (
-                <div className="mt-8 grid grid-cols-2 gap-4">
+                <div className="mt-6 sm:mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {project.stats.map((stat, i) => (
                     <motion.div
                       key={i}
@@ -236,7 +235,10 @@ export default function ProjectDetails() {
               )}
             </motion.div>
 
-            <motion.div variants={item} className="order-1 lg:order-2">
+            <motion.div
+              variants={item}
+              className="order-1 lg:order-2 mt-8 lg:mt-0"
+            >
               {project.overview.image && (
                 <div className="aspect-[16/9] w-full rounded-2xl overflow-hidden ring-1 ring-black/5 bg-white shadow-lg">
                   <img
@@ -263,7 +265,7 @@ export default function ProjectDetails() {
             variants={container}
             className="grid grid-cols-1 lg:grid-cols-2 gap-12"
           >
-            <motion.div variants={item}>
+            <motion.div variants={item} className="mt-8 lg:mt-0">
               <div className="sticky top-24">
                 {project.problemSolution.image && (
                   <div className="aspect-[16/9] w-full rounded-2xl overflow-hidden ring-1 ring-black/5 bg-white shadow-lg">
@@ -282,7 +284,7 @@ export default function ProjectDetails() {
               </div>
             </motion.div>
 
-            <motion.div variants={item} className="space-y-12">
+            <motion.div variants={item} className="space-y-12 mt-8 lg:mt-0">
               <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
                 <div className="flex items-center mb-4">
                   <div className="w-8 h-8 rounded-full flex items-center justify-center bg-red-100 text-red-600 mr-3">
@@ -346,35 +348,35 @@ export default function ProjectDetails() {
               variants={container}
               className="grid grid-cols-1 lg:grid-cols-2 gap-12"
             >
-              <motion.div variants={item} className="space-y-2">
-                <h3 className="text-3xl font-bold text-[var(--text-primary)]">
+              <motion.div variants={item} className="space-y-4 sm:space-y-6">
+                <h3 className="text-3xl sm:text-4xl font-bold text-[var(--text-primary)]">
                   Benefits{" "}
                   <span className="text-[var(--secondary)]">Achieved</span>
                 </h3>
-                <p className="text-lg text-[var(--text-secondary)] max-w-lg">
+                <p className="text-base sm:text-lg text-[var(--text-secondary)] max-w-full sm:max-w-lg">
                   The measurable outcomes and positive impacts delivered by this
                   project
                 </p>
 
-                <motion.ul className="mt-8 space-y-8">
+                <motion.ul className="mt-6 sm:mt-8 space-y-6 sm:space-y-8">
                   {project.benefits.map((b, i) => (
                     <motion.li
                       key={i}
                       variants={item}
                       whileHover={{ x: 5 }}
-                      className="flex items-start gap-4 p-4 rounded-xl hover:bg-white/50 transition-colors"
+                      className="flex flex-col sm:flex-row items-start gap-4 p-4 rounded-xl hover:bg-white/50 transition-colors"
                     >
                       <span
-                        className="mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full text-white text-lg shrink-0 shadow-md"
+                        className="mt-1 sm:mt-0 inline-flex h-8 w-8 items-center justify-center rounded-full text-white text-lg shrink-0 shadow-md"
                         style={{ background: "var(--primary)" }}
                       >
                         {i + 1}
                       </span>
                       <div>
-                        <h4 className="text-xl font-semibold text-[var(--text-primary)]">
+                        <h4 className="text-lg sm:text-xl font-semibold text-[var(--text-primary)]">
                           {b.heading}
                         </h4>
-                        <p className="mt-2 text-[var(--text-secondary)]">
+                        <p className="mt-1 sm:mt-2 text-[var(--text-secondary)]">
                           {b.description}
                         </p>
                       </div>
@@ -383,7 +385,7 @@ export default function ProjectDetails() {
                 </motion.ul>
               </motion.div>
 
-              <motion.div variants={item}>
+              <motion.div variants={item} className="mt-8 lg:mt-0">
                 {project.benefitsImage && (
                   <div className="sticky top-24">
                     <div className="aspect-[4/5] w-full rounded-2xl overflow-hidden ring-1 ring-black/5 bg-white shadow-lg">
@@ -404,21 +406,17 @@ export default function ProjectDetails() {
             </motion.section>
           )}
 
-        {/* ======= GALLERY ======= */}
-        
-             
-
         {/* ======= APPROACHES ======= */}
         {project.approaches && project.approaches.length > 0 && (
           <section
-            className="mt-16 py-12 px-6 rounded-3xl"
+            className="mt-16 py-12 px-4 sm:px-6 md:px-6 rounded-3xl"
             style={{ background: "rgba(95,205,178,0.08)" }}
           >
             <div className="mx-auto max-w-4xl text-center">
-              <h3 className="text-2xl md:text-3xl font-bold text-[var(--text-primary)]">
+              <h3 className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)]">
                 Our <span className="text-[var(--secondary)]">Approach</span>
               </h3>
-              <p className="mt-4 text-lg text-[var(--text-secondary)] max-w-3xl mx-auto">
+              <p className="mt-4 text-base sm:text-lg text-[var(--text-secondary)] max-w-full sm:max-w-3xl mx-auto">
                 The methodologies and strategies that drove this project's
                 success
               </p>
@@ -428,13 +426,13 @@ export default function ProjectDetails() {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
-                className="mt-8 flex flex-wrap justify-center gap-3"
+                className="mt-8 flex flex-wrap justify-center gap-2 sm:gap-3"
               >
                 {project.approaches.map((chip, i) => (
                   <motion.span
                     key={i}
                     variants={item}
-                    className="px-5 py-2.5 rounded-full text-sm font-medium shadow-sm"
+                    className="px-3 sm:px-5 py-2 rounded-full text-sm sm:text-sm font-medium shadow-sm"
                     style={{
                       background: "white",
                       color: "var(--text-primary)",
@@ -448,7 +446,6 @@ export default function ProjectDetails() {
             </div>
           </section>
         )}
-
       </div>
     </main>
   );

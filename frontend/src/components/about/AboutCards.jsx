@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const data = [
   {
@@ -21,13 +21,24 @@ const data = [
 function AboutCards() {
   return (
     <div>
-      <section className="flex flex-col gap-10 px-[150px]">
-        <h2 className="text-center text-primary text-4xl font-semibold">We Are TechTri</h2>
-        <div className="grid grid-cols-3 gap-6">
+      <section className="flex flex-col gap-10 px-4 sm:px-6 md:px-10 lg:px-[150px]">
+        <h2 className="text-center text-primary text-2xl sm:text-3xl md:text-4xl font-semibold">
+          We Are TechTri
+        </h2>
+
+        {/* ✅ Responsive Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {data.map((item) => (
-            <div className="bg-white border rounded-2xl p-6 flex flex-col gap-3" key={item.id}>
-              <h3 className="text-2xl text-text-primary font-medium">{item.title}</h3>
-              <p className="text-sm text-text-secondary">{item.desc}</p>
+            <div
+              className="bg-white border rounded-2xl p-4 sm:p-5 md:p-6 flex flex-col gap-3"
+              key={item.id}
+            >
+              <h3 className="text-xl sm:text-xl md:text-2xl text-text-primary font-medium">
+                {item.title}
+              </h3>
+              <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
+                {item.desc}
+              </p>
             </div>
           ))}
         </div>
